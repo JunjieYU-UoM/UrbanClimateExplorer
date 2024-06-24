@@ -1,4 +1,5 @@
 import intake
+import os
 import numpy as np
 import pandas as pd
 import xarray as xr
@@ -186,7 +187,8 @@ def get_cam_clm(model, experiment, frequency, member_id, time, cam_ls, clm_ls, f
         CAM dataset and CLM dataset
     """
 
-    subgrid_info_path = "./CESM2_subgrid_info.nc"
+    
+    subgrid_info_path = os.path.join(os.path.dirname(__file__), "CESM2_subgrid_info.nc")
     clm_var = clm_ls[0] # CESM2 can only work on a single variable at this point. 
     urban_type_dict = {"tbd":7, "hd":8, "md":9}
 
