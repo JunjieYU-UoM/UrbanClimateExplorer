@@ -3,8 +3,9 @@ channels:
 - defaults
 
 dependencies:
-- python=3.8.0
-- intake-esm
+- python=3.10
+- pydantic=1.10.0
+- intake-esm=2023.6.14
 - s3fs
 - jupyterlab
 - matplotlib
@@ -12,7 +13,7 @@ dependencies:
 - pandas
 - scikit-learn
 - tqdm
-- flaml=1.0.0
+- flaml
 - fastparquet
 - pip
 - pip:
