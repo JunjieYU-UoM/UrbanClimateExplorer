@@ -32,7 +32,7 @@ def get_text(k, v, type='Button'):
 
 button = widgets.Button(description="Submit")
 
-def input_form(json_file="config_cesm1.json"):
+def input_form(json_file="config_cesm1.json", ouput_json="./temp.json"):
     
     with open(json_file,'r') as f:
         data = json.load(f)
@@ -82,7 +82,7 @@ def input_form(json_file="config_cesm1.json"):
             else:
                 data[key] = layout[key]['widget'].value
                 
-        with open("./temp.json", 'w') as f:
+        with open(ouput_json, 'w') as f:
             json.dump(data, f)
 
     button.on_click(on_button_clicked)
