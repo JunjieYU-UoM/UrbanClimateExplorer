@@ -204,6 +204,7 @@ def get_cam_clm(model, experiment, frequency, member_id, time, cam_ls, clm_ls, f
                           experiment=experiment, 
                           frequency=frequency,
                           variable=(cam_ls+clm_ls))
+        member_id = [int(i) for i in member_id]
         dsets_cam = dsets[a_component+"."+experiment+"."+frequency].sel(member_id=member_id, time=time)[cam_ls]
         dsets_clm = dsets[l_component+"."+experiment+"."+frequency].sel(member_id=member_id, time=time)[clm_ls]
 
